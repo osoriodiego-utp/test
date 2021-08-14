@@ -1,5 +1,5 @@
 using System;
-using System.Collection.Generic;
+using System.Collections.Generic;
 using System.Linq;
 
 namespace ConsoleApp
@@ -10,17 +10,21 @@ namespace ConsoleApp
         {
             var cell = houses.ToList();
             var res = new List<int>();
+
             for (int i =0; i<days; i++)
             {
-                for (int j=0; j<houses.Count; j++{
-                    var left = i == 0 ? 0 : houses[i-1];
+                for (int j=0; j<cell.Count; j++)
+                {
+                    res.Clear();
+                    var left = i == 0 ? 0 : cell[i-1];
                     var right = i == cell.Count - 1 ? 0 : cell[i+1];
 
-                    res.Add(left == der ? 0 : 1);
+                    res.Add(left == right ? 0 : 1);
                 }
 
                 cell = res.ToList();
             }
+            return res.ToList();
         }
         static void Main(string[] args)
         {
